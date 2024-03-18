@@ -13,4 +13,8 @@ fs.readFile(path.join(__dirname, "external_data.json"), (err, data) => {
   // JSON 텍스트를 object로 변환
   const jsonObject = JSON.parse(data);
   console.log(jsonObject);
+
+  // object를 JSON형태의 텍스트로
+  const jsonString = JSON.stringify(jsonObject);
+  console.log(jsonString);
 });
