@@ -10,7 +10,15 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// 예) http://localhost:3000/test/clover?lang=ko
+app.get("/test/:name", (req, res) => {
+  console.log("path", req.path); // '/test/clover'
+  console.log("params", req.params); // {name: 'clover}
+  console.log("query", req.query); //  {lang: 'ko'}
+  res.send("콘솔");
+});
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
-  console.log(express.static(path.join(__dirname, "HTML")));
+  console.log(path.join(__dirname, "HTML"));
 });
